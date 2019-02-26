@@ -4,28 +4,28 @@
     <button
       class="job-list__filter-button"
       v-bind:class="{ active: Region === 'hela Sverige' }"
-      v-on:click="FilterList('hela Sverige')" 
+      v-on:click="Filter('hela Sverige')" 
     >
       Hela Sverige
     </button>
     <button 
       class="job-list__filter-button"
       v-bind:class="{ active: Region === 'Stockholm' }"
-      v-on:click="FilterList('Stockholm')"
+      v-on:click="Filter('Stockholm')"
     >
       Stockholm
     </button>
     <button 
       class="job-list__filter-button"
       v-bind:class="{ active: Region === 'Göteborg' }"
-      v-on:click="FilterList('Göteborg')"
+      v-on:click="Filter('Göteborg')"
     >
       Göteborg
     </button>
     <button 
       class="job-list__filter-button"
       v-bind:class="{ active: Region === 'Malmö' }"
-      v-on:click="FilterList('Malmö')"
+      v-on:click="Filter('Malmö')"
     >
       Malmö
     </button>
@@ -35,16 +35,17 @@
 <script>
 export default {
   name: 'ListFilter',
-  // data () {
-  //   return {
-  //     IsNavOpen: false
-  //   }
-  // },
-  // methods: {
-  //   OpenNav() {
-  //     (!this.IsNavOpen) ? this.IsNavOpen = true : this.IsNavOpen = false
-  //   }
-  // }
+  data() {
+    return {
+      Region: 'hela Sverige'
+    }
+  },
+  methods: {
+    Filter (Reg) {
+      this.Region = Reg
+      this.$emit('clicked', Reg)
+    }
+  }
 }
 </script>
 
@@ -70,10 +71,10 @@ export default {
   border-radius: 0.3em;
 }
 
-/* .active {
+.job-list__filter-button.active {
   background: #565656;
   color: white;
   font-weight: 700;
-} */
+}
 
 </style>
