@@ -3,7 +3,7 @@
     <div class="job-list__wrapper">
       <h2 class="job-list__title">Listar <span>{{AvailableJobs.length}}</span> frontend jobb i <span>{{Region}}</span></h2>
       <ListFilter @clicked="FilterList"/>
-      <ListedJobs :JobList="AvailableJobs" />
+      <ListedJobs :JobList="AvailableJobs"  v-if="AvailableJobs"/>
     </div>
   </main>
 </template>
@@ -30,16 +30,20 @@ export default {
     fetch('http://api.arbetsformedlingen.se/af/v0/platsannonser/matchning?yrkesid=7633&antalrader=100')
     .then((res) => res.json())
     .then((response) => {
-      this.AvailableJobs = response.matchningslista.matchningdata
-      this.AllJobs = response.matchningslista.matchningdata
+      /*  Sets AllJob and AvailableJobs
+          AllJobs holds all listed jobs, to be able to use the same fetched array when unfilter..
+          AvailableJobs is looped in the DOM. */
+      this.AvailableJobs = this.AllJobs = response.matchningslista.matchningdata
     })
   },
   methods: {
     FilterList (FilterValue) {
       this.Region = FilterValue
       if (FilterValue === 'hela Sverige') {
+        // Lists all the jobs from AllJobs-holder array.
         this.AvailableJobs = this.AllJobs
       } else {
+        // Filtering AllJobs by selected city.
         this.AvailableJobs = this.AllJobs.filter(job => job.kommunnamn === FilterValue)
       }
     }

@@ -2,26 +2,23 @@
 
 > Case for job application
 
-## Build Setup
+## Setup
 
-``` bash
-# install dependencies
 npm install
-
-# serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
+## File structure
+App.vue
+- router 
+  index.js (Routes with paths etc)
+- components
+  Contact (Contact page)
+  Home (Home page)
+  Job (Displays selected job)
+  List (Lists front end jobs)
+- - parts 
+    Header (Header for app)
+    ListedJobs (Looping all the jobs)
+    ListFilter (Holds filter buttons)
 
-# build for production and view the bundle analyzer report
-npm run build --report
 
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

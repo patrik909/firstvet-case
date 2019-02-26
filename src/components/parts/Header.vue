@@ -40,6 +40,7 @@ export default {
   },
   methods: {
     OpenNav() {
+      // Checks if nav is open, set true or false
       (!this.IsNavOpen) ? this.IsNavOpen = true : this.IsNavOpen = false
     }
   }

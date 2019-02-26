@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import List from '@/components/List'
-import JsonResult from '@/components/JsonResult'
+import Job from '@/components/Job'
 import Contact from '@/components/Contact'
 
 Vue.use(Router)
@@ -20,9 +20,9 @@ export default new Router({
       component: List
     },
     {
-      path: '/JsonResult/:id',
-      name: 'JsonResult',
-      component: JsonResult
+      path: '/Job/:id',
+      name: 'Job',
+      component: Job
     },
     {
       path: '/contact',

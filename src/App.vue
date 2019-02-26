@@ -42,6 +42,7 @@ button {
 #app {
   width: 375px;
   min-height: 667px;
+  height: 100%;
   font-family: 'Lato';
   background: white;
 }
@@ -54,5 +55,6 @@ button {
 
 main {
   width: 100%;
+  min-height: 85%;
 }
 </style>

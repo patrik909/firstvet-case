@@ -5,7 +5,7 @@
         <p class="job-list__job-title">{{ job.annonsrubrik.substring(0, 30) }}<span v-if="job.annonsrubrik.length > 30">...</span></p>
         <p class="job-list__job-info"><span>{{ job.arbetsplatsnamn}}</span> i {{ job.kommunnamn }}</p>
       </div>
-      <a class="job-list__job-link" :href="'/jsonresult/'+ job.annonsid"><i class="fas fa-chevron-circle-right"></i></a>
+      <a class="job-list__job-link" :href="'/job/'+ job.annonsid"><i class="fas fa-chevron-circle-right"></i></a>
     </li>
   </ul>
 </template>

@@ -42,7 +42,9 @@ export default {
   },
   methods: {
     Filter (Reg) {
+      // Variable is used to active highlight current filter option.
       this.Region = Reg
+      // Sends filter value back to List.vue
       this.$emit('clicked', Reg)
     }
   }
