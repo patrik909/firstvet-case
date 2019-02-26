@@ -1,9 +1,8 @@
 <template>
   <div>
-    {{jobContent.annons.annonsrubrik}}
-    {{jobContent.annons.anstallningstyp}}
-    {{jobContent.annons.kommunnamn}}
-    {{jobContent.annons.annonstext}}
+    <h2>{{jobContent.annons.annonsrubrik}}</h2>
+    <h3>{{jobContent.annons.anstallningstyp}} i {{jobContent.annons.kommunnamn}}</h3>
+    <p>{{jobContent.annons.annonstext}}</p>
   </div>
 </template>
 
