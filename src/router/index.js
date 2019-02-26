@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Json from '@/components/Json'
+import List from '@/components/List'
 import JsonResult from '@/components/JsonResult'
 import Contact from '@/components/Contact'
 
@@ -15,9 +15,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/json',
-      name: 'Json',
-      component: Json
+      path: '/List',
+      name: 'List',
+      component: List
     },
     {
       path: '/JsonResult/:id',

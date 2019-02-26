@@ -1,9 +1,11 @@
 <template>
-  <div class="job-list">
+  <main class="job-list">
+    <div class="job-list__wrapper">
+      <h2 class="job-list__title">Listar <span>{{AvailableJobs.length}}</span> frontend jobb i <span>{{Region}}</span></h2>
+      <!-- <ListFilter /> -->
 
-    <h2>Listar <span>{{AvailableJobs.length}}</span> frontend jobb i <span>{{Region}}</span></h2>
 
-    <div class="job-list__filter">
+    <!-- <div class="job-list__filter">
       <p class="job-list__filter-title">Filter: </p>
       <button
         class="job-list__filter-button"
@@ -33,26 +35,24 @@
       >
         Malmö
       </button>
+    </div> -->
+
+      <ListedJobs :JobList="AvailableJobs" />
     </div>
-
-
-    <ul class="job-list__list">
-      <li v-for="job in AvailableJobs"  class="job-list__list-item">
-        <div class="job-list__job-wrapper"> 
-          <p class="job-list__job-title">{{ job.annonsrubrik.substring(0, 30) }}<span v-if="job.annonsrubrik.length > 30">...</span></p>
-          <p class="job-list__job-info"><span>{{ job.arbetsplatsnamn}}</span> i {{ job.kommunnamn }}</p>
-        </div>
-        <a class="job-list__job-link" v-bind:href="'/jsonresult/'+ job.annonsid"><i class="fas fa-chevron-circle-right"></i></a>
-      </li>
-    </ul>
-
-    
-  </div>
+  </main>
 </template>
 
 <script>
+
+import ListFilter from './parts/ListFilter'
+import ListedJobs from './parts/ListedJobs'
+
 export default {
-  name: 'Json',
+  name: 'List',
+  components: {
+    ListFilter,
+    ListedJobs
+  },
   data () {
     return {
       AllJobs: [],
@@ -83,22 +83,22 @@ export default {
 
 <style scoped>
 
+.job-list__wrapper {
+  padding-top: 4rem;
+}
 
-h2 {
+.job-list__title {
   margin-bottom: 2rem;
   padding: 0 1.5rem;
   font-weight: 500;
   text-align: center;
 }
 
-h2 span {
+.job-list__title span {
   font-weight: 700;
 }
 
-.job-list {
-  padding-top: 4rem;
-  min-height: 90vh;
-}
+/* -- - */
 
 
 .job-list__filter {
@@ -125,49 +125,6 @@ h2 span {
   background: #565656;
   color: white;
   font-weight: 700;
-}
-
-
-.job-list__list {
-  padding: 1rem;
-}
-
-.job-list__list-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
-  padding: 2rem 0.5rem;
-  border-bottom: 1px solid #cccccc;
-}
-
-.job-list__list-item:first-child {
-  border-top: 1px solid #cccccc;
-}
-
-.job-list__job-title {
-  margin: 0;
-  margin-bottom: 0.8rem;
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.job-list__job-info {
-  margin: 0;
-  font-weight: 500;
-  font-size: 1.4rem;
-  color: #595959;
-}
-
-.job-list__job-info span {
-  font-style: italic;
-}
-
-.job-list__job-link {
-  font-size: 2.5rem;
-  color: #c1c1c1;
 }
 
 </style>

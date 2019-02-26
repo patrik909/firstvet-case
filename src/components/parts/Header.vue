@@ -18,7 +18,7 @@
       >Hem</a>
       <a
         class="header__nav-links"
-        href="/json"
+        href="/list"
         v-on:click="OpenNav()"
       >Lista</a>
       <a

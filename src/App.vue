@@ -14,16 +14,6 @@ export default {
   name: 'App',
   components: {
     Header
-  },
-  data () {
-    return {
-      IsNavOpen: false
-    }
-  },
-  methods: {
-    OpenNav(HandleValue) {
-      this.IsNavOpen = HandleValue
-    }
   }
 }
 </script>
@@ -39,6 +29,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
+  min-height: 100vh;
   background: #565656;
 }
 
