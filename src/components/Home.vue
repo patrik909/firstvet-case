@@ -1,10 +1,16 @@
 <template>
-  <div class="front-page">
-    <p>Den här appen bygger på <span>Vue.JS</span> och byggdes som case för <span>FirstVet.</span></p>
-    <p>Appen visar 100 <span>frontend job</span> i <span>hela Sverige</span> med möjlighet för <span>filtrering</span> på städerna <span>Stockholm</span>, <span>Göteborg</span> och <span>Malmö</span>.</p>
-    <p><span>Arbetsförmedlingens API</span> gör det lätt för utvecklare att hämta hem data med specifika sökvägar. Jag valde däremot att filtrera datan med array funktioner.</p>
-    <h3>Tack för utmaningen!</h3>
-  </div>
+  <main class="front-page">
+    <div class="front-page__wrapper">
+      <p class="front-page__text">
+        Applikationen är byggd med Vue.
+        <br><br>
+        100 listade frontend job visas från Arbetsförmedlingens API. Dom har gjort det lätt för utvecklare att hämta hem data med specifika sökvägar.
+        <br><br>
+        Jag valde att filtrera med hjälp av array funktioner.  
+      </p>
+      <h2 class="front-page__subheading">Tack för utmaningen!</h2>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -13,35 +19,28 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 .front-page {
+  min-height: 50rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 85vh;
-  padding: 0 4rem;
 }
 
-.front-page p {
-  font-size: 1.2rem;
-  margin-bottom: 4rem;
-  letter-spacing: 0.08em;
+.front-page__text {
+  padding: 0 5rem;
+  font-size: 1.6rem;
   line-height: 1.8em;
-  text-transform: uppercase;
 }
 
-.front-page p span {
-  font-weight: 700;
-}
-
-h3 {
+.front-page__subheading {
+  margin-top: 5rem;
   font-size: 2rem;
-  letter-spacing: 0.08em;
-  line-height: 1.8em;
-  text-transform: uppercase;
+  font-weight: 900;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 </style>

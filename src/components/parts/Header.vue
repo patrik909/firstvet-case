@@ -3,12 +3,12 @@
     <h1 class="header__title">FirstVet Case</h1>
     <button
       class="header__hamburger"
-      v-on:click="OpenNav(true)"
+      v-on:click="OpenNav()"
       v-bind:class="{ open: IsNavOpen }"
     >
-      <div></div>
-      <div></div>
-      <div></div>
+      <div class="header__hamburger-line"></div>
+      <div class="header__hamburger-line"></div>
+      <div class="header__hamburger-line"></div>
     </button>
     <nav class="header__nav" v-bind:class="{ open: IsNavOpen }">
       <a
@@ -39,12 +39,8 @@ export default {
     }
   },
   methods: {
-    OpenNav(HandleValue) {
-      if (!this.IsNavOpen) {
-        this.IsNavOpen = HandleValue
-      } else {
-        this.IsNavOpen = false
-      }
+    OpenNav() {
+      (!this.IsNavOpen) ? this.IsNavOpen = true : this.IsNavOpen = false
     }
   }
 }
@@ -57,7 +53,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 15vh;
+  height: 9rem;
   padding: 0 1rem;
 }
 
@@ -73,35 +69,35 @@ export default {
   z-index: 100;
 }
 
-.header__hamburger div {
+.header__hamburger .header__hamburger-line {
   margin: 0.5rem 0;
   width: 3rem;
   height: 0.3rem;
   background: black;  
-  transition: 150ms;
+  transition: 100ms;
 }
 
-.header__hamburger.open div {
+.header__hamburger.open .header__hamburger-line {
   position: absolute;
   top: -2rem;
   right: 2rem;
 }
 
-.header__hamburger.open div:nth-child(1) {
+.header__hamburger.open .header__hamburger-line:nth-child(1) {
   width: 0.3rem;
   height: 3.3rem;
   background: white;
   transform: rotate(45deg);
 }
 
-.header__hamburger.open div:nth-child(2) {
+.header__hamburger.open .header__hamburger-line:nth-child(2) {
   width: 0.3rem;
   height: 3.3rem;
   background: white;
   transform: rotate(-45deg);
 }
 
-.header__hamburger.open div:nth-child(3) {
+.header__hamburger.open .header__hamburger-line:nth-child(3) {
   display: none;
 }
 
@@ -118,7 +114,7 @@ export default {
   background: rgba(0,0,0,0.9);
   z-index: -1;
   opacity: 0;
-  transition: 300ms;
+  transition: 200ms;
 }
 
 .header__nav.open {

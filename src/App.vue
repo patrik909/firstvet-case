@@ -49,8 +49,8 @@ button {
 }
 
 #app {
-  max-width: 375px;
-  height: 667px;
+  width: 375px;
+  min-height: 667px;
   font-family: 'Lato';
   background: white;
 }
@@ -59,5 +59,9 @@ button {
   width: 90%;
   margin: auto;
   border-bottom: 1px solid #ededed;
+}
+
+main {
+  width: 100%;
 }
 </style>
