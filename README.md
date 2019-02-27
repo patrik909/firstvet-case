@@ -3,9 +3,10 @@
 > Case for job application
 
 ## Setup
-
+```
 npm install
 npm run dev
+```
 
 ## File structure
 App.vue
