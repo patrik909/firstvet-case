@@ -1,8 +1,9 @@
 # firstvet-case
 
-> Case for job application
+Case for job application built with Vue, fetching data from Arbetsförmedlingens API.
 
 ## Setup
+
 ```
 npm install
 npm run dev
