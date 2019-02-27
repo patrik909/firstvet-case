@@ -9,7 +9,9 @@ npm run dev
 
 ## File structure
 App.vue
+
 -router 
+
 index.js (Routes with paths etc)
 
 -components
